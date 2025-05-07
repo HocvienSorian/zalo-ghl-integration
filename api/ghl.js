@@ -1,4 +1,4 @@
-import { sendZaloMessage } from "../zalo.js";
+import { sendZaloMessage } from "../_zalo.js";
 
 export default async function handler(req, res) {
   if (req.method === "POST") {
