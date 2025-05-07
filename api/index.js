@@ -1,8 +1,8 @@
 import express from "express";
 import bodyParser from "body-parser";
 import dotenv from "dotenv";
-import { sendZaloMessage, parseZaloMessage } from "./zalo.js";
-import { sendToGHL } from "./ghl.js";
+import { sendZaloMessage, parseZaloMessage } from "../zalo.js";
+import { sendToGHL } from "../ghl.js";
 
 dotenv.config();
 
@@ -30,8 +30,7 @@ app.post("/webhook/ghl", async (req, res) => {
   res.status(200).send("GHL message received");
 });
 
-// Listen
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-  console.log(`Middleware running at http://localhost:${PORT}`);
-});
+// ❌ KHÔNG DÙNG app.listen()
+
+// ✅ EXPORT APP CHO VERCEL
+export default app;
