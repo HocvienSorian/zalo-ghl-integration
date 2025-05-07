@@ -1,5 +1,5 @@
-import { sendToGHL } from "../ghl.js";
-import { parseZaloMessage } from "../zalo.js";
+import { sendToGHL } from "../_ghl.js";
+import { parseZaloMessage } from "../_zalo.js";
 
 export default async function handler(req, res) {
   if (req.method === "POST") {
